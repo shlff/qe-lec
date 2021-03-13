@@ -1,0 +1,49 @@
+# Some tutorials on QuantEcon working process
+
+(Matt's advice: put more contexts on the work flow.)
+
+
+## 1 general working process
+
+- step 1: ``git checkout master``
+- step 2: ``git pull``
+- step 3: open, edit and save file(s) 
+- step 4: ``git add -A``
+- step 5: ``git status``
+- step 6: ``git commit -m "xxx"``
+- step 7: ``git push``
+- step 8: ``git checkout master``
+
+## 2 squash commits
+
+- step 1: ``git checkout master``
+- step 2: ``git pull``
+- step 3: ``git checkout <branch_name>``
+- step 4: ``git pull``
+- step 5: open, edit and save file(s)
+- step 6: ``git add -A``
+- step 7: ``git status``
+- step 8: ``git commit -m "<message>"``
+- step 9: ``git reset --soft HEAD~#``
+  - ``#`` = # of commits in pull request + # of commits created from ``step 8``
+- step 10: ``git commit -m "<new_message>"``
+- step 11: ``git push origin +<branch_name>``
+- step 12: ``git checkout master``
+
+## 3 check and reset commit labels
+
+- step 1: ``git checkout <branch_name>``
+- step 2: ``git log``
+- step 3: ``git reset --hard <the_commit_previous_to_the_one_we_want_to_reset>``
+- step 4: ``git push --force``
+
+## 4 keep current with the master branch
+
+- step 1: ``git checkout master``
+- step 2: ``git pull``
+- step 3: ``git checkout <my-feature-branch>``
+- step 4: ``git push origin <my-feature-branch>``
+- step 5: ``git rebase master``
+- step 6: ``git push origin <my-feature-branch> --force``
+
+For inference, please see [here](https://gist.github.com/blackfalcon/8428401#keeping-current-with-the-master-branch).
