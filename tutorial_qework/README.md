@@ -47,3 +47,30 @@
 - step 6: ``git push origin <my-feature-branch> --force``
 
 For inference, please see [here](https://gist.github.com/blackfalcon/8428401#keeping-current-with-the-master-branch).
+
+## 5 setups for texlive
+
+reference:
+- https://tug.org/mactex/mactex-unix-download.html
+
+1. Download [install-tl-unx.tar.gz](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz) to your current directory.
+2. Run the following code in the terminal:
+    ```
+    zsh
+	umask 0022
+	sudo perl install-tl -gui text
+    ```
+3. Locate to the to-be-compiled file, ``xx.tex``, and run
+   ```
+   xelatex -shell-escape xx.tex
+   ```
+4. Then run
+   ```
+   bibtex xx
+   ```
+   to locate the bib file
+5. Run
+   ```
+   xelatex -shell-escape xx.tex
+   ```
+   again
