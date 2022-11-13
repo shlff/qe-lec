@@ -74,3 +74,14 @@ reference:
    xelatex -shell-escape xx.tex
    ```
    again
+
+## 6 adding commits to a fork
+
+To do that, we need to add a remote user repo in our local machine.
+
+For example:
+1. git remote add crondonm https://github.com/crondonm/QuantEcon.py.git
+2. git fetch crondonm
+3. git checkout -t crondonm/VAR-approximation
+
+Now we will be in the branch VAR-approximation of crondonm and we can add our changes/commits and just push.
